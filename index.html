@@ -1,60 +1,87 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>KSM Labs</title>
-    
-    <style>
-        body {
-            font-family: "Times New Roman", Times, serif;
-            text-align: center;
-        }
+    <meta charset="utf-8">
 
-        header {
-            background-color: lightseagreen;
-            color: white;
-            padding: 20px;
-        }
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-        img {
-            width: 300px;
-            max-width: 100%;
-        }
+    <meta name="description"
+          content="KSM Labs is my web development portfolio created for my COP4813 Web Systems class. I will be updating this site with future assignments, projects, and creative ideas.">
 
-        footer {
-            margin-top: 30px;
-        }
-    </style>
+    <meta name="author" content="Kaleb S. Meador">
 
+    <title>KSM Labs | Home</title>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
     <header>
-        <h1>Hello World!</h1>
+        <h1>KSM Labs</h1>
+        <p>Web Development Portfolio</p>
     </header>
 
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="assignments.html">My Assignments</a></li>
+            <li><a href="assignment1.html">Assignment 1</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <h2>Welcome to KSM Labs</h2>
 
-        <p>
-            This site was created for my college class COP4813.
-        </p>
+        <section>
+            <h2 class="welcome-title">Welcome!</h2>
 
-        <img src="ksmlabs.png" alt="KSM Labs logo">
+            <img src="ksmlabs.png"
+                 alt="KSM Labs logo"
+                 class="site-logo">
 
-        <p>
-            <a href="https://ksmlabs.net">
-                Check out KSM Labs, my project website! Created with GoDaddy.
-            </a>
-        </p>
+            <p>
+                Welcome to KSM Labs! This website was created for my
+                COP4813 Web Systems course.
+            </p>
+
+            <p>
+                As I complete assignments in this course, I will be updating this page and cataloging each assingment. Plus adding new features. Stay tuned.
+            </p>
+        </section>
+
+        <section>
+            <h2>About Me</h2>
+
+            <p>
+                I am currently pursuing a Bachelor of Science in Information Technology, along with an Advanced Technical Certificate in Cybersecurity and Cyberforensics at Daytona State College. Through my coursework, I am continuing to build skills in programming, networking, databases, and cybersecurity that will help prepare me for a career in the field. Last semester, I studied data structures using JavaScript, and I look forward to applying that experience to this website by adding interactive features and continuing to strengthen my web development skills.
+            </p>
+
+            <p>
+                KSM Labs is my personal portfolio. This is where I will showcase my creativity and different technical skills by building upon this website.
+            </p>
+        </section>
+
+        <section>
+            <h2>Experience & Skills</h2>
+
+            <ul>
+                
+                <li>Database Management</li>
+                <li>Networks & Security</li>
+                <li>Linux Administration</li>
+                <li>Python | C# | Javascript | HTML | CSS</li>
+            </ul>
+        </section>
+
     </main>
 
-   
-    
     <footer>
-        <p>Created by Kaleb S. Meador</p>
+        <p>&copy; 2026 KSM Labs | COP4813 Web Systems</p>
     </footer>
+
 </body>
 
 </html>
