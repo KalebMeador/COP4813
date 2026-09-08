@@ -3,6 +3,9 @@
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: #f5f6f8;
     color: #222222;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -49,10 +52,14 @@ nav {
         nav a:focus {
             background-color: #3b82f6;
         }
+
 main {
+    flex: 1;
     max-width: 1000px;
+    width: 100%;
     margin: 40px auto;
     padding: 0 20px;
+    box-sizing: border-box;
 }
 
 section {
@@ -74,6 +81,7 @@ section {
     display: block;
     margin: 25px auto;
 }
+
 .welcome-title {
     text-align: center;
 }
