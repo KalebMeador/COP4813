@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
@@ -16,25 +15,72 @@
     <title>KSM Labs | Home</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <script src="navigation.js" defer></script>
 </head>
 
 <body>
-
     <header>
         <h1>KSM Labs</h1>
         <p>Web Development Portfolio</p>
     </header>
 
-    <nav aria-label="Main navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="assignments.html">My Assignments</a></li>
-            <li><a href="assignment1.html">Assignment 1</a></li>
+    <nav class="main-navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li>
+                <a href="index.html" aria-current="page">
+                    Home
+                </a>
+            </li>
+
+            <li class="dropdown" id="assignmentsDropdown">
+                <button type="button"
+                        class="dropdown-button"
+                        id="assignmentsButton"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="assignmentsMenu">
+
+                    My Assignments
+
+                    <span class="dropdown-arrow" aria-hidden="true">
+                        ▼
+                    </span>
+                </button>
+
+                <ul class="dropdown-menu"
+                    id="assignmentsMenu"
+                    aria-labelledby="assignmentsButton">
+
+                    <li>
+                        <a href="assignments.html">
+                            Assignments Overview
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment1.html">
+                            Assignment 1
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            Assignment 2
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment3.html">
+                            Assignment 3
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
     <main>
-
         <section>
             <h2 class="welcome-title">Welcome!</h2>
 
@@ -48,7 +94,9 @@
             </p>
 
             <p>
-                As I complete assignments in this course, I will be updating this page and cataloging each assingment. Plus adding new features. Stay tuned.
+                As I complete assignments in this course, I will update
+                this page and catalog each assignment. I will also add
+                new features, so stay tuned.
             </p>
         </section>
 
@@ -56,32 +104,44 @@
             <h2>About Me</h2>
 
             <p>
-                I am currently pursuing a Bachelor of Science in Information Technology, along with an Advanced Technical Certificate in Cybersecurity and Cyberforensics at Daytona State College. Through my coursework, I am continuing to build skills in programming, networking, databases, and cybersecurity that will help prepare me for a career in the field. Last semester, I studied data structures using JavaScript, and I look forward to applying that experience to this website by adding interactive features and continuing to strengthen my web development skills.
+                I am currently pursuing a Bachelor of Science in
+                Information Technology, along with an Advanced Technical
+                Certificate in Cybersecurity and Cyberforensics at Daytona
+                State College.
             </p>
 
             <p>
-                KSM Labs is my personal portfolio. This is where I will showcase my creativity and different technical skills by building upon this website.
+                Through my coursework, I am continuing to build skills in
+                programming, networking, databases, and cybersecurity that
+                will help prepare me for a career in the field. Last semester,
+                I studied data structures using JavaScript, and I look forward
+                to applying that experience to this website by adding
+                interactive features and continuing to strengthen my web
+                development skills.
+            </p>
+
+            <p>
+                KSM Labs is my personal portfolio. This is where I will
+                showcase my creativity and different technical skills by
+                building upon this website.
             </p>
         </section>
 
         <section>
-            <h2>Experience & Skills</h2>
+            <h2>Experience &amp; Skills</h2>
 
             <ul>
-                
                 <li>Database Management</li>
-                <li>Networks & Security</li>
+                <li>Networks &amp; Security</li>
                 <li>Linux Administration</li>
-                <li>Python | C# | Javascript | HTML | CSS</li>
+                <li>Python | C# | JavaScript | HTML | CSS</li>
             </ul>
         </section>
-
     </main>
 
     <footer>
-        <p>Created by KSM Labs | 2026 | COP4813</p><p</p>
+        <p>Created by KSM Labs | 2026 | COP4813</p>
     </footer>
-
 </body>
 
 </html>

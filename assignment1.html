@@ -3,9 +3,19 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>KSM Labs</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Assignment 1 Hello World page for KSM Labs.">
+
+    <meta name="author" content="Kaleb S. Meador">
+
+    <title>KSM Labs | Assignment 1</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script src="navigation.js" defer></script>
 
     <style>
         body {
@@ -19,27 +29,74 @@
             padding: 20px;
         }
 
-        img {
+        main img {
             width: 300px;
             max-width: 100%;
+            height: auto;
         }
 
         footer {
             margin-top: 30px;
         }
     </style>
-
 </head>
 
 <body>
     <header>
         <h1>Hello World!</h1>
     </header>
-    <nav aria-label="Main navigation">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="assignments.html">My Assignments</a></li>
-            <li><a href="assignment1.html">Assignment 1</a></li>
+
+    <nav class="main-navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="dropdown" id="assignmentsDropdown">
+                <button type="button"
+                        class="dropdown-button"
+                        id="assignmentsButton"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="assignmentsMenu">
+
+                    My Assignments
+
+                    <span class="dropdown-arrow" aria-hidden="true">
+                        ▼
+                    </span>
+                </button>
+
+                <ul class="dropdown-menu"
+                    id="assignmentsMenu"
+                    aria-labelledby="assignmentsButton">
+
+                    <li>
+                        <a href="assignments.html">
+                            Assignments Overview
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment1.html"
+                           aria-current="page">
+                            Assignment 1
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            Assignment 2
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment3.html">
+                            Assignment 3
+                        </a>
+                    </li>
+                </ul>
+            </li>
         </ul>
     </nav>
 
@@ -59,10 +116,8 @@
         </p>
     </main>
 
-
-
     <footer>
-        <p>Created by KSM Labs | 2026 | COP4813</p><p</p>
+        <p>Created by KSM Labs | 2026 | COP4813</p>
     </footer>
 </body>
 

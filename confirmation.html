@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -7,14 +8,16 @@
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="COP4813 Web Systems assignments completed and published through KSM Labs.">
+          content="Confirm information entered in the KSM Labs contact form.">
 
     <meta name="author" content="Kaleb S. Meador">
 
-    <title>KSM Labs | My Assignments</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="navigation.js" defer></script>
+    <title>KSM Labs | Confirm Information</title>
 
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="navigation.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 
 <body>
@@ -34,6 +37,7 @@
                         class="dropdown-button"
                         id="assignmentsButton"
                         aria-expanded="false"
+                        aria-haspopup="true"
                         aria-controls="assignmentsMenu">
 
                     My Assignments
@@ -76,49 +80,56 @@
     </nav>
 
     <main>
-        <h2>My COP4813 Assignments</h2>
+        <section class="form-card">
+            <div class="form-heading">
+                <p class="eyebrow">Final Step</p>
 
-        <p>
-            This page catalogs my COP4813 assignments in chronological order.
-        </p>
+                <h2>Confirm Your Information</h2>
 
-        <h3>Assignment 1 - Hello World</h3>
+                <p>
+                    Review the information below. Select “Go Back and Edit”
+                    if anything needs to be changed.
+                </p>
+            </div>
 
-        <p>
-            A1. A basic web page using basic HTML, CSS, and GitHub.
-        </p>
+            <div id="noFormData"
+                 class="form-summary"
+                 role="alert"
+                 hidden>
 
-        <p>
-            <a href="assignment1.html">View Assignment 1</a>
-        </p>
+                No form information was found. Please complete the form first.
+            </div>
 
-        <h3>Assignment 2 - Website Creation</h3>
+            <dl id="confirmationDetails"
+                class="confirmation-details">
+            </dl>
 
-        <p>
-            A2. This assignment was used to build off of A1 by creating
-            new HTML items within Visual Studio and experimenting with
-            HTML and CSS to build this webpage. Pushed through GitHub.
-        </p>
+            <div class="button-row"
+                 id="confirmationButtons">
 
-        <p>
-            <a href="index.html">View Assignment 2</a>
-        </p>
+                <button type="button"
+                        id="editButton"
+                        class="secondary-button">
+                    Go Back and Edit
+                </button>
 
-        <h3>Assignment 3 - HTML5 and JavaScript Form</h3>
+                <button type="button"
+                        id="confirmButton"
+                        class="primary-button">
+                    Confirm and Send
+                </button>
+            </div>
 
-        <p>
-            A3. A client-side information form featuring input validation,
-            a phone number mask, a security question, and a confirmation page.
-        </p>
-
-        <p>
-            <a href="assignment3.html">View Assignment 3</a>
-        </p>
-        
+            <p class="mailto-notice" id="mailtoNotice">
+                Selecting “Confirm and Send” will open your default email
+                application. You may need to approve the email from there.
+            </p>
+        </section>
     </main>
 
     <footer>
         <p>Created by KSM Labs | 2026 | COP4813</p>
     </footer>
 </body>
+
 </html>

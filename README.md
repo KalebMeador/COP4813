@@ -1,5 +1,5 @@
-This is Assignment 1 for COP4813
+This webpage is where my assingments for COP4813 live. Will be updating this page as I complete assignments, respectivley. 
+Created with HTML5, CSS,and Javascript. Hosted/pushed on GitHub.
 
-This repo (index.html) contains the website created for A1 "Hello World"
 
 Created by Kaleb S. Meador
