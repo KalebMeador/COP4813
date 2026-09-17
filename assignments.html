@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -12,35 +13,45 @@
     <meta name="author" content="Kaleb S. Meador">
 
     <title>KSM Labs | My Assignments</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="navigation.js" defer></script>
 
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="navigation.js" defer></script>
 </head>
 
 <body>
+
     <header>
         <h1>KSM Labs</h1>
         <p>COP4813 Web Systems Portfolio</p>
     </header>
 
     <nav class="main-navigation" aria-label="Main navigation">
+
         <ul class="nav-menu">
+
             <li>
-                <a href="index.html">Home</a>
+                <a href="index.html">
+                    Home
+                </a>
             </li>
 
             <li class="dropdown" id="assignmentsDropdown">
+
                 <button type="button"
                         class="dropdown-button"
                         id="assignmentsButton"
                         aria-expanded="false"
+                        aria-haspopup="true"
                         aria-controls="assignmentsMenu">
 
                     My Assignments
 
-                    <span class="dropdown-arrow" aria-hidden="true">
+                    <span class="dropdown-arrow"
+                          aria-hidden="true">
                         ▼
                     </span>
+
                 </button>
 
                 <ul class="dropdown-menu"
@@ -48,7 +59,8 @@
                     aria-labelledby="assignmentsButton">
 
                     <li>
-                        <a href="assignments.html">
+                        <a href="assignments.html"
+                           aria-current="page">
                             Assignments Overview
                         </a>
                     </li>
@@ -70,17 +82,29 @@
                             Assignment 3
                         </a>
                     </li>
+
+                    <li>
+                        <a href="assignment4.html">
+                            Assignment 4
+                        </a>
+                    </li>
+
                 </ul>
+
             </li>
+
         </ul>
+
     </nav>
 
     <main>
+
         <h2>My COP4813 Assignments</h2>
 
         <p>
             This page catalogs my COP4813 assignments in chronological order.
         </p>
+
 
         <h3>Assignment 1 - Hello World</h3>
 
@@ -89,8 +113,11 @@
         </p>
 
         <p>
-            <a href="assignment1.html">View Assignment 1</a>
+            <a href="assignment1.html">
+                View Assignment 1
+            </a>
         </p>
+
 
         <h3>Assignment 2 - Website Creation</h3>
 
@@ -101,8 +128,11 @@
         </p>
 
         <p>
-            <a href="index.html">View Assignment 2</a>
+            <a href="index.html">
+                View Assignment 2
+            </a>
         </p>
+
 
         <h3>Assignment 3 - HTML5 and JavaScript Form</h3>
 
@@ -112,13 +142,35 @@
         </p>
 
         <p>
-            <a href="assignment3.html">View Assignment 3</a>
+            <a href="assignment3.html">
+                View Assignment 3
+            </a>
         </p>
-        
+
+
+        <h3>Assignment 4 - Creating Plots</h3>
+
+        <p>
+            A4. A Big O notation calculator that compares O(n) and
+            O(n<sup>2</sup>). The calculator displays a time complexity
+            comparison, calculated values, and an interactive graph.
+            Made with JavaScript.
+        </p>
+
+        <p>
+            <a href="assignment4.html">
+                View Assignment 4
+            </a>
+        </p>
+
     </main>
 
     <footer>
-        <p>Created by KSM Labs | 2026 | COP4813</p>
+        <p>
+            Created by KSM Labs | 2026 | COP4813
+        </p>
     </footer>
+
 </body>
+
 </html>

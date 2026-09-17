@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Big O notation calculator comparing O(n) and O(n squared) time complexity using JavaScript and Highcharts.">
+
+    <meta name="author" content="Kaleb S. Meador">
+
+    <title>KSM Labs | Assignment 4 Big O Calculator</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="navigation.js" defer></script>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/highcharts.js"
+            defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/modules/exporting.js"
+            defer></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/highcharts/modules/accessibility.js"
+            defer></script>
+
+    <script src="assignment4.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>KSM Labs</h1>
+        <p>COP4813 Web Systems Portfolio</p>
+    </header>
+
+    <nav class="main-navigation" aria-label="Main navigation">
+
+        <ul class="nav-menu">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li class="dropdown"
+                id="assignmentsDropdown">
+
+                <button type="button"
+                        class="dropdown-button"
+                        id="assignmentsButton"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                        aria-controls="assignmentsMenu">
+
+                    My Assignments
+
+                    <span class="dropdown-arrow"
+                          aria-hidden="true">
+                        ▼
+                    </span>
+
+                </button>
+
+                <ul class="dropdown-menu"
+                    id="assignmentsMenu"
+                    aria-labelledby="assignmentsButton">
+
+                    <li>
+                        <a href="assignments.html">
+                            Assignments Overview
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment1.html">
+                            Assignment 1
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="index.html">
+                            Assignment 2
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment3.html">
+                            Assignment 3
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="assignment4.html"
+                           aria-current="page">
+                            Assignment 4
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <main>
+
+        <section class="content-section assignment4-section">
+
+            <div class="assignment4-heading">
+
+                <p class="eyebrow">
+                    COP4813 Web Systems
+                </p>
+
+                <h2>
+                    Assignment 4 - Creating Plots
+                </h2>
+
+                <h3>
+                    Big O Notation Calculator
+                </h3>
+
+                <p>
+                    This calculator compares O(n) linear time complexity
+                    with O(n<sup>2</sup>) quadratic time complexity.
+                </p>
+
+                <p>
+                    Enter a minimum and maximum input size. Select
+                    Calculate to display the values or Plot to calculate
+                    the values and display the comparison graph.
+                </p>
+
+            </div>
+
+            <div class="calculator-card">
+
+                <div class="equation-display">
+
+                    <div>
+                        <span class="equation-label">
+                            Linear:
+                        </span>
+
+                        O(n) = n
+                    </div>
+
+                    <div>
+                        <span class="equation-label">
+                            Quadratic:
+                        </span>
+
+                        O(n<sup>2</sup>) = n<sup>2</sup>
+                    </div>
+
+                </div>
+
+                <div class="calculator-controls">
+
+                    <div class="calculator-input-group">
+
+                        <label for="nmin">
+                            Input n Min
+                        </label>
+
+                        <input type="number"
+                               id="nmin"
+                               value="2"
+                               min="1"
+                               max="200">
+
+                    </div>
+
+                    <div class="calculator-input-group">
+
+                        <label for="nmax">
+                            Input n Max
+                        </label>
+
+                        <input type="number"
+                               id="nmax"
+                               value="20"
+                               min="1"
+                               max="200">
+
+                    </div>
+
+                    <div class="calculator-buttons">
+
+                        <button type="button"
+                                id="calculate"
+                                class="primary-button">
+
+                            Calculate
+
+                        </button>
+
+                        <button type="button"
+                                id="plot"
+                                class="secondary-button">
+
+                            Plot
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <p id="calculatorMessage"
+                   class="calculator-message"
+                   role="alert"
+                   aria-live="polite">
+                </p>
+
+            </div>
+
+            <div class="comparison-grid">
+
+                <article class="comparison-panel">
+
+                    <h3>
+                        Calculated Values
+                    </h3>
+
+                    <p class="panel-description">
+                        The values below show how each function grows
+                        throughout the selected input range.
+                    </p>
+
+                    <div id="output"
+                         class="calculation-output"
+                         aria-live="polite">
+
+                        <p class="output-placeholder">
+                            Select Calculate or Plot to display
+                            the calculated values.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <article class="comparison-panel">
+
+                    <h3>
+                        Growth and Scalability
+                    </h3>
+
+                    <div id="growthSummary"
+                         class="growth-summary">
+
+                        <p>
+                            <strong>Growth:</strong>
+                            O(n) grows steadily, while O(n<sup>2</sup>)
+                            grows much faster as input increases.
+                        </p>
+
+                        <p>
+                            <strong>Scalability:</strong>
+                            O(n) generally handles larger inputs more efficiently
+                            than O(n<sup>2</sup>).
+                        </p>
+
+                        <p>
+                            <strong>Why Big O matters:</strong>
+                            Big O helps developers compare how algorithms
+                            scale as input sizes increase.
+                        </p>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="chart-section">
+
+                <h3>
+                    Big O Growth Comparison
+                </h3>
+
+                <p>
+                    The X-axis represents input size while the Y-axis
+                    represents the growth value for each Big O function.
+                </p>
+
+                <div id="container"
+                     class="chart-container">
+
+                    <p class="chart-placeholder">
+                        Select Plot to generate the comparison graph.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 KSM Labs</p>
+    </footer>
+
+</body>
+
+</html>
