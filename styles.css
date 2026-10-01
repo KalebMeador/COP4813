@@ -1471,3 +1471,126 @@ footer {
         font-size: 16px;
     }
 }
+/* assignment 6 security tools table */
+
+.security-table-wrapper {
+    width: 100%;
+    margin-top: 24px;
+    overflow-x: auto;
+    border: 1px solid #454039;
+    border-radius: 12px;
+    background-color: #181a1c;
+}
+
+.security-tools-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    text-align: left;
+    color: #eeeeee;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+    .security-tools-table caption {
+        padding: 18px 20px;
+        background-color: #202225;
+        color: #f5f5f5;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: left;
+        caption-side: top;
+    }
+
+    .security-tools-table thead {
+        background-color: #29261f;
+    }
+
+    .security-tools-table th {
+        padding: 16px;
+        border-bottom: 2px solid #ffbf00;
+        color: #ffbf00;
+        font-weight: 700;
+        vertical-align: top;
+    }
+
+    .security-tools-table td {
+        padding: 20px 16px;
+        border-bottom: 1px solid #383a3d;
+        vertical-align: top;
+        overflow-wrap: anywhere;
+    }
+
+    /* column widths */
+
+    .security-tools-table tr > :nth-child(1) {
+        width: 13%;
+    }
+
+    .security-tools-table tr > :nth-child(2) {
+        width: 19%;
+    }
+
+    .security-tools-table tr > :nth-child(3) {
+        width: 28%;
+    }
+
+    .security-tools-table tr > :nth-child(4) {
+        width: 27%;
+    }
+
+    .security-tools-table tr > :nth-child(5) {
+        width: 13%;
+    }
+
+    /* row styling */
+
+    .security-tools-table tbody tr:nth-child(even) {
+        background-color: #222427;
+    }
+
+    .security-tools-table tbody tr:hover {
+        background-color: #302b21;
+    }
+
+    .security-tools-table tbody tr:last-child > * {
+        border-bottom: none;
+    }
+
+    .security-tools-table tbody td:first-child {
+        color: #ffffff;
+        font-weight: 700;
+    }
+
+    /* website links */
+
+    .security-tools-table td a {
+        color: #ffcc4d;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+        .security-tools-table td a:hover {
+            color: #ffe29a;
+        }
+
+        .security-tools-table td a:focus-visible {
+            outline: 2px solid #ffbf00;
+            outline-offset: 4px;
+            border-radius: 2px;
+        }
+
+/* smaller screens */
+
+@media (max-width: 600px) {
+    .security-tools-table {
+        font-size: 14px;
+    }
+
+        .security-tools-table th,
+        .security-tools-table td {
+            padding: 14px 12px;
+        }
+}
