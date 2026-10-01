@@ -1,0 +1,25 @@
+{
+  "tools": [
+    {
+      "name": "Wireshark",
+      "category": "Packet Analysis",
+      "description": "Captures and examines network packets and protocols.",
+      "blueTeamUse": "Investigating unusual connections and analyzing network traffic.",
+      "website": "https://www.wireshark.org/"
+    },
+    {
+      "name": "Snort",
+      "category": "Intrusion Detection and Prevention",
+      "description": "Uses rules to detect suspicious network traffic and can block it when configured inline.",
+      "blueTeamUse": "Generating alerts for possible attacks and suspicious activity.",
+      "website": "https://www.snort.org/"
+    },
+    {
+      "name": "Security Onion",
+      "category": "Security Monitoring Platform",
+      "description": "Combines tools for network monitoring, log analysis, threat hunting, and investigations.",
+      "blueTeamUse": "Reviewing security alerts and investigating evidence from multiple sources.",
+      "website": "https://securityonion.net/"
+    }
+  ]
+}

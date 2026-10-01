@@ -1324,3 +1324,150 @@ footer {
         transition-duration: 0.01ms !important;
     }
 }
+/* assignment 6 security tools */
+
+.assignment6-section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.assignment6-heading {
+    margin-bottom: 24px;
+}
+
+    .assignment6-heading h2 {
+        margin-bottom: 8px;
+    }
+
+    .assignment6-heading > p:last-child {
+        max-width: 800px;
+        color: var(--text-secondary);
+    }
+
+
+/* loading and error messages */
+
+.tools-status {
+    min-height: 26px;
+    color: var(--text-secondary);
+}
+
+    .tools-status.is-error {
+        color: var(--red-300);
+    }
+
+
+/* scrollable tools table */
+
+.tools-table-container {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--accent-500);
+    border-radius: 11px;
+    background-color: var(--surface-soft);
+    box-shadow: var(--shadow-small);
+}
+
+    .tools-table-container:focus-visible {
+        outline: 3px solid var(--accent-400);
+        outline-offset: 3px;
+    }
+
+
+/* table headings and content */
+
+.tools-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+    .tools-table caption {
+        padding: 18px;
+        color: var(--text-primary);
+        text-align: left;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .tools-table th,
+    .tools-table td {
+        padding: 16px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+    }
+
+    .tools-table thead th {
+        background-color: var(--accent-dark);
+        color: var(--accent-100);
+        font-weight: 700;
+    }
+
+    .tools-table tbody th {
+        color: var(--accent-300);
+        font-weight: 700;
+    }
+
+    .tools-table td {
+        color: var(--text-secondary);
+    }
+
+
+    /* alternating table rows */
+
+    .tools-table tbody tr:nth-child(even) {
+        background-color: var(--input-background);
+    }
+
+    .tools-table tbody tr:last-child > * {
+        border-bottom: 0;
+    }
+
+
+    /* official website links */
+
+    .tools-table a {
+        color: var(--accent-400);
+        font-weight: 650;
+        text-underline-offset: 4px;
+    }
+
+        .tools-table a:hover {
+            color: var(--accent-300);
+        }
+
+        .tools-table a:focus-visible {
+            outline: 3px solid var(--accent-400);
+            outline-offset: 3px;
+        }
+
+
+/* tool licensing note */
+
+.tools-note {
+    margin-top: 22px;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+
+/* assignment 6 mobile layout */
+
+@media (max-width: 700px) {
+
+    .assignment6-section {
+        padding: 24px 17px;
+    }
+
+    .tools-table th,
+    .tools-table td {
+        padding: 12px;
+    }
+
+    .tools-table caption {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
