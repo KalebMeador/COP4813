@@ -1594,3 +1594,207 @@ footer {
             padding: 14px 12px;
         }
 }
+/* assignment 7 drag and drop task board */
+
+main.assignment7-page {
+    max-width: 1100px;
+}
+
+.assignment7-page > h1 {
+    margin-bottom: 8px;
+    color: var(--accent-400);
+    font-size: clamp(28px, 4vw, 38px);
+}
+
+
+/* task entry form */
+
+.assignment7-page #taskForm {
+    margin: 24px 0;
+}
+
+    .assignment7-page #taskForm label {
+        display: block;
+        margin-bottom: 8px;
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+.assignment7-page .input-row {
+    display: flex;
+    gap: 10px;
+}
+
+.assignment7-page #taskInput {
+    flex: 1;
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    background-color: var(--input-background);
+    color: var(--text-primary);
+    font: inherit;
+}
+
+    .assignment7-page #taskInput::placeholder {
+        color: var(--text-secondary);
+    }
+
+.assignment7-page #taskForm button {
+    padding: 12px 18px;
+    border: 0;
+    border-radius: 8px;
+    background-color: var(--accent-400);
+    color: var(--graphite-950);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .assignment7-page #taskForm button:hover {
+        background-color: var(--accent-300);
+    }
+
+    .assignment7-page #taskInput:focus-visible,
+    .assignment7-page #taskForm button:focus-visible {
+        outline: 3px solid var(--accent-400);
+        outline-offset: 3px;
+    }
+
+
+/* visible feedback after adding or dropping a task */
+
+.assignment7-page #message {
+    padding: 14px 16px;
+    border-left: 4px solid var(--accent-400);
+    border-radius: 5px;
+    background-color: var(--surface-soft);
+    color: var(--text-primary);
+    overflow-wrap: anywhere;
+}
+
+
+/* three-column board */
+
+.assignment7-page .board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.assignment7-page .column {
+    min-width: 0;
+    margin: 0;
+    padding: 18px;
+    border: 2px dashed var(--border-light);
+    border-radius: 10px;
+    background: var(--surface);
+    box-shadow: none;
+}
+
+    /* overrides the general section hover styling */
+
+    .assignment7-page .column:hover {
+        border-color: var(--border-light);
+        box-shadow: none;
+    }
+
+    /* highlighted when a task is dragged over the column */
+
+    .assignment7-page .column.drag-over {
+        border-color: var(--accent-400);
+        background: var(--accent-dark);
+    }
+
+    .assignment7-page .column h2 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 18px;
+        color: var(--text-primary);
+        font-size: 1.15rem;
+    }
+
+.assignment7-page .count {
+    padding: 2px 10px;
+    border-radius: 6px;
+    background-color: var(--surface-hover);
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+
+/* draggable task cards */
+
+.assignment7-page .task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 160px;
+}
+
+.assignment7-page .task {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 8px;
+    background-color: var(--accent-400);
+    color: var(--graphite-950);
+    font-weight: 700;
+    cursor: grab;
+}
+
+    .assignment7-page .task img {
+        display: block;
+        flex-shrink: 0;
+        width: 24px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .assignment7-page .task span {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .assignment7-page .task:active {
+        cursor: grabbing;
+    }
+
+    .assignment7-page .task.dragging {
+        opacity: 0.4;
+    }
+
+
+/* instructions and refresh notice */
+
+.assignment7-page .drop-hint,
+.assignment7-page .note {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.assignment7-page .drop-hint {
+    margin: 16px 0 0;
+    text-align: center;
+}
+
+
+/* assignment 7 mobile layout */
+
+@media (max-width: 700px) {
+    .assignment7-page .board {
+        grid-template-columns: 1fr;
+    }
+
+    .assignment7-page .input-row {
+        flex-direction: column;
+    }
+
+    .assignment7-page #taskForm button {
+        width: 100%;
+    }
+}
