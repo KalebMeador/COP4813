@@ -1798,3 +1798,15 @@ main.assignment7-page {
         width: 100%;
     }
 }
+
+/* Assignment 9 - Animation */
+
+#ballCanvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 24px auto;
+    background: #17191d;
+    outline: 2px solid #ffc15a;
+    cursor: pointer;
+}
