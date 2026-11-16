@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Compare five content management systems, their technology, capabilities, limitations, and example websites.">
+    <title>CMS Review | KSM Labs</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        .cms-review {
+            max-width: 92rem;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+            .cms-review a {
+                color: #ffd078;
+                text-decoration: underline;
+            }
+
+        .cms-table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+            .cms-table-wrap:focus-visible {
+                outline: 3px solid #ffd078;
+                outline-offset: 3px;
+            }
+
+        .cms-review table {
+            width: 100%;
+            min-width: 64rem;
+            border-collapse: collapse;
+            background: #191919;
+            color: #f4f4f4;
+            line-height: 1.5;
+        }
+
+        .cms-review caption {
+            padding: 0.75rem;
+            background: #191919;
+            color: #f4f4f4;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .cms-review th,
+        .cms-review td {
+            padding: 0.8rem;
+            border: 1px solid #595959;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .cms-review thead th {
+            background: #30271a;
+            color: #ffd078;
+        }
+
+        .cms-review tbody tr:nth-child(even) {
+            background: #232323;
+        }
+
+        .cms-review .source-link {
+            display: block;
+            width: fit-content;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>KSM Labs</h1>
+        <p>Web Development Portfolio</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html">Home</a> |
+        <a href="assignments.html">My Assignments</a>
+    </nav>
+
+    <main class="cms-review">
+        <h2>CMS Review</h2>
+
+        <p id="cms-status" role="status">Loading the CMS comparison…</p>
+        <noscript>Enable JavaScript to load the comparison table.</noscript>
+
+        <div id="table-wrap" class="cms-table-wrap" role="region"
+             aria-label="CMS comparison, scroll horizontally on smaller screens"
+             tabindex="0" hidden>
+            <table>
+                <caption>Content management systems compared</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">System</th>
+                        <th scope="col">Produced/Sold by</th>
+                        <th scope="col">Technology Base</th>
+                        <th scope="col">Major Capabilities</th>
+                        <th scope="col">Major Limitations</th>
+                        <th scope="col">Example Site</th>
+                    </tr>
+                </thead>
+                <tbody id="cms-rows"></tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>const columns = ["Support", "Technology", "Capabilities", "Limitations"];
+
+        function createLink(label, url) {
+            const link = document.createElement("a");
+            link.textContent = label;
+            link.href = url;
+            return link;
+        }
+
+        function addSource(cell, system, category) {
+            const source = createLink("Source", system.Sources[category]);
+            source.className = "source-link";
+            source.setAttribute("aria-label", `${system.Name} ${category} source`);
+            cell.append(source);
+        }
+
+        function createRow(system) {
+            const row = document.createElement("tr");
+            const name = document.createElement("th");
+            name.scope = "row";
+            name.textContent = system.Name;
+            row.append(name);
+
+            for (const category of columns) {
+                const cell = row.insertCell();
+                cell.textContent = system[category];
+                addSource(cell, system, category);
+            }
+
+            const example = row.insertCell();
+            example.append(createLink(system.Examples.label, system.Examples.url));
+            addSource(example, system, "Examples");
+            return row;
+        }
+
+        async function loadComparison() {
+            const status = document.getElementById("cms-status");
+
+            try {
+                const response = await fetch("./cms-review.json");
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const systems = await response.json();
+                const rows = systems.map(createRow);
+                document.getElementById("cms-rows").replaceChildren(...rows);
+                document.getElementById("table-wrap").hidden = false;
+                status.textContent = "";
+            } catch (error) {
+                status.textContent =
+                    "The comparison could not load. Check that cms-review.json " +
+                    "is in the same folder and open this page through a web server.";
+                console.error("Could not load CMS comparison:", error);
+            }
+        }
+
+        loadComparison();</script>
+</body>
+</html>

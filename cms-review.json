@@ -1,0 +1,148 @@
+[
+  {
+    "Name": "WordPress",
+    "Support": "Open-source software maintained by the WordPress contributor community. Community support forums and commercial hosting are available.",
+    "Technology": "Server: PHP. Database: MySQL or MariaDB. Client: a browser-based block editor for authors and HTML, CSS, and JavaScript for visitors.",
+    "Capabilities": "Authors build posts and pages with blocks. Themes control the design, plugins add features, and the REST API lets other applications work with site content.",
+    "Limitations": "Installed plugins and themes need ongoing updates. On a self-hosted site, the administrator manages those updates and plans for recovery if an update causes a problem.",
+    "Examples": {
+      "label": "NASA",
+      "url": "https://www.nasa.gov/"
+    },
+    "Sources": {
+      "Support": "https://wordpress.org/about/",
+      "Technology": "https://wordpress.org/about/requirements/",
+      "Capabilities": "https://wordpress.org/about/features/",
+      "Limitations": "https://wordpress.org/documentation/article/plugins-themes-auto-updates/",
+      "Examples": "https://wordpress.org/showcase/nasa/"
+    }
+  },
+  {
+    "Name": "Drupal",
+    "Support": "Open-source software maintained by the Drupal community. The Drupal Association supports the project, and commercial partners offer implementation and support.",
+    "Technology": "Server: PHP. Database options include MySQL, MariaDB, and PostgreSQL. Client: a browser-based editing interface. Twig templates generate HTML for visitors.",
+    "Capabilities": "Teams can define content types with reusable fields, translate content, and require editorial approval before publishing. Modules extend functionality and themes control presentation.",
+    "Limitations": "Maintaining contributed modules and themes commonly requires Composer. Updates can involve dependency changes and database updates, so the team needs technical maintenance skills.",
+    "Examples": {
+      "label": "Flemish Agency for Persons with Disabilities",
+      "url": "https://www.vaph.be/"
+    },
+    "Sources": {
+      "Support": "https://www.drupal.org/about",
+      "Technology": "https://www.drupal.org/docs/getting-started/system-requirements",
+      "Capabilities": "https://www.drupal.org/docs/user_guide/en/index.html",
+      "Limitations": "https://www.drupal.org/docs/updating-drupal/updating-modules-and-themes-using-composer",
+      "Examples": "https://new.drupal.org/case-study/flanders-gains-a-modern-drupal-10"
+    }
+  },
+  {
+    "Name": "Ghost",
+    "Support": "Open-source software developed by the nonprofit Ghost Foundation and contributors. Ghost(Pro) provides paid managed hosting.",
+    "Technology": "Server: Node.js. Database: MySQL for supported production installations. Client: a browser-based editor. Handlebars themes generate HTML pages for readers.",
+    "Capabilities": "Publishers can publish articles, send email newsletters, register members, and restrict selected posts to paying subscribers.",
+    "Limitations": "Ghost officially supports a narrow production stack. A company that standardizes on PostgreSQL would need to operate a separate MySQL database or use managed hosting.",
+    "Examples": {
+      "label": "404 Media",
+      "url": "https://www.404media.co/"
+    },
+    "Sources": {
+      "Support": "https://ghost.org/about/",
+      "Technology": "https://docs.ghost.org/themes",
+      "Capabilities": "https://ghost.org/",
+      "Limitations": "https://ghost.org/changelog/6/",
+      "Examples": "https://explore.ghost.org/p/404-media"
+    }
+  },
+  {
+    "Name": "Wagtail",
+    "Support": "Open-source software maintained by the Wagtail project and contributors. Community and commercial support are available.",
+    "Technology": "Server: Python and Django. Database options include PostgreSQL, MySQL, MariaDB, and SQLite. Client: a browser-based editor. Django templates can render the public pages.",
+    "Capabilities": "Developers define page types and reusable content blocks. Editors can arrange those blocks, preview pages, schedule publication, and submit changes for approval.",
+    "Limitations": "Creating a new page type generally requires a developer to define a Python model and a template. Editors depend on the layouts and fields the development team provides.",
+    "Examples": {
+      "label": "NHS website",
+      "url": "https://www.nhs.uk/"
+    },
+    "Sources": {
+      "Support": "https://github.com/wagtail",
+      "Technology": "https://github.com/wagtail/wagtail",
+      "Capabilities": "https://docs.wagtail.org/en/stable/getting_started/",
+      "Limitations": "https://docs.wagtail.org/en/stable/getting_started/tutorial.html",
+      "Examples": "https://wagtail.org/showcase/"
+    }
+  },
+  {
+    "Name": "MediaWiki",
+    "Support": "Free, open-source wiki software developed by the Wikimedia Foundation and volunteer contributors.",
+    "Technology": "Server: PHP. Database options include MariaDB, MySQL, PostgreSQL, and SQLite. Client: contributors edit through a web browser, and readers view HTML pages.",
+    "Capabilities": "Contributors can edit shared pages, compare revisions, restore earlier versions, and discuss proposed changes on talk pages. Skins and extensions customize the wiki.",
+    "Limitations": "Extension compatibility varies by MediaWiki version. An administrator may need to update or replace an extension during an upgrade.",
+    "Examples": {
+      "label": "English Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/Main_Page"
+    },
+    "Sources": {
+      "Support": "https://www.mediawiki.org/wiki/MediaWiki",
+      "Technology": "https://www.mediawiki.org/wiki/Manual:Installation_requirements",
+      "Capabilities": "https://www.mediawiki.org/wiki/Help:Contents",
+      "Limitations": "https://www.mediawiki.org/wiki/Manual:Extensions",
+      "Examples": "https://www.mediawiki.org/wiki/MediaWiki"
+    }
+  },
+  {
+    "Name": "Shopify",
+    "Support": "Commercial hosted platform developed and supported by Shopify. Shopify maintains the hosting infrastructure and platform software.",
+    "Technology": "Data layer: Shopify manages product, collection, and page records and exposes them through its admin and APIs. Client layer: merchants use a browser-based admin. Storefront themes use Liquid templates, HTML, CSS, and JavaScript.",
+    "Capabilities": "Staff can organize products into collections, publish pages and blog posts, customize storefront themes, and add features through apps. The same platform also handles inventory, checkout, and orders.",
+    "Limitations": "Some checkout changes depend on the subscription plan. Adding custom interface elements to the information, shipping, or payment steps requires Shopify Plus.",
+    "Examples": {
+      "label": "Gymshark",
+      "url": "https://www.gymshark.com/"
+    },
+    "Sources": {
+      "Support": "https://www.shopify.com/about",
+      "Technology": "https://shopify.dev/docs/storefronts/themes/architecture",
+      "Capabilities": "https://help.shopify.com/en/manual/online-store",
+      "Limitations": "https://shopify.dev/docs/api/checkout-ui-extensions/latest",
+      "Examples": "https://www.shopify.com/case-studies/gymshark"
+    }
+  },
+  {
+    "Name": "Wix",
+    "Support": "Commercial hosted platform developed and supported by Wix. Wix manages the hosting and provides a browser-based site editor.",
+    "Technology": "Data layer: Wix CMS stores records in managed collections with fields and items. Client layer: authors work in a visual browser editor and connect page elements to collection fields through datasets.",
+    "Capabilities": "Authors can create a collection, design a reusable layout, and generate a page for each item. For example, adding a project record can create a portfolio page with its own title, images, and description.",
+    "Limitations": "Collection item counts and database storage are limited by the site's plan. A growing directory or catalog may require a plan upgrade.",
+    "Examples": {
+      "label": "Animal Music",
+      "url": "https://www.animalmusicstudios.com/"
+    },
+    "Sources": {
+      "Support": "https://www.wix.com/about/us",
+      "Technology": "https://www.wix.com/cms",
+      "Capabilities": "https://www.wix.com/cms",
+      "Limitations": "https://support.wix.com/en/article/cms-understanding-collection-storage-limits-and-quotas",
+      "Examples": "https://de.wix.com/explore/websites/site/animal-music"
+    }
+  },
+  {
+    "Name": "Joomla",
+    "Support": "Open-source CMS maintained by the Joomla Project and its contributor community. Site owners can choose their own hosting provider.",
+    "Technology": "Server: PHP. Database: MySQL, MariaDB, or PostgreSQL. Client layer: authors use a browser-based administrator interface, and site templates deliver HTML, CSS, and JavaScript to visitors.",
+    "Capabilities": "Editors can organize articles into categories, publish in multiple languages, and assign permissions to user groups. Templates control the layout, and extensions add functionality.",
+    "Limitations": "Self-hosting requires a server that meets Joomla's PHP and database requirements. The site owner must maintain that environment and check extension compatibility when planning upgrades.",
+    "Examples": {
+      "label": "Vokoloko.cz",
+      "url": "https://vokoloko.cz/"
+    },
+    "Sources": {
+      "Support": "https://www.joomla.org/about-joomla.html",
+      "Technology": "https://manual.joomla.org/docs/5.4/get-started/technical-requirements/",
+      "Capabilities": "https://www.joomla.org/core-features.html",
+      "Limitations": "https://manual.joomla.org/docs/5.4/get-started/technical-requirements/",
+      "Examples": "https://showcase.joomla.org/browse-sites/25883.html"
+    }
+  }
+]
+
+
