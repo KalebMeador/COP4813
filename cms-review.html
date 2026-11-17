@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-          content="Compare five content management systems, their technology, capabilities, limitations, and example websites.">
+          content="Compare eight content management systems, their technology, capabilities, limitations, and example websites.">
+
     <title>CMS Review | KSM Labs</title>
+
     <link rel="stylesheet" href="styles.css">
+    <script src="navigation.js" defer></script>
 
     <style>
         .cms-review {
@@ -79,20 +82,55 @@
         <p>Web Development Portfolio</p>
     </header>
 
-    <nav aria-label="Main navigation">
-        <a href="index.html">Home</a> |
-        <a href="assignments.html">My Assignments</a>
+    <nav class="main-navigation" aria-label="Main navigation">
+        <ul class="nav-menu">
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li class="dropdown" id="assignmentsDropdown">
+                <button type="button"
+                        class="dropdown-button"
+                        id="assignmentsButton"
+                        aria-expanded="false"
+                        aria-controls="assignmentsMenu">
+                    My Assignments
+                    <span class="dropdown-arrow" aria-hidden="true">▼</span>
+                </button>
+
+                <ul class="dropdown-menu"
+                    id="assignmentsMenu"
+                    aria-labelledby="assignmentsButton">
+                    <li><a href="assignments.html">Assignments Overview</a></li>
+                    <li><a href="assignment1.html">Assignment 1</a></li>
+                    <li><a href="index.html">Assignment 2</a></li>
+                    <li><a href="assignment3.html">Assignment 3</a></li>
+                    <li><a href="assignment4.html">Assignment 4</a></li>
+                    <li><a href="assignment5.html">Assignment 5</a></li>
+                    <li><a href="assignment6.html">Assignment 6</a></li>
+                    <li><a href="assignment7.html">Assignment 7</a></li>
+                    <li><a href="assignment9.html">Assignment 9</a></li>
+                    <li><a href="report.html">Lighthouse Report</a></li>
+                    <li>
+                        <a href="cms-review.html" aria-current="page">CMS Review</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </nav>
 
     <main class="cms-review">
         <h2>CMS Review</h2>
 
-        <p id="cms-status" role="status">Loading the CMS comparison…</p>
+        <p id="cms-status" role="status"></p>
         <noscript>Enable JavaScript to load the comparison table.</noscript>
 
-        <div id="table-wrap" class="cms-table-wrap" role="region"
+        <div id="table-wrap"
+             class="cms-table-wrap"
+             role="region"
              aria-label="CMS comparison, scroll horizontally on smaller screens"
-             tabindex="0" hidden>
+             tabindex="0"
+             hidden>
             <table>
                 <caption>Content management systems compared</caption>
                 <thead>
@@ -110,7 +148,8 @@
         </div>
     </main>
 
-    <script>const columns = ["Support", "Technology", "Capabilities", "Limitations"];
+    <script>
+        const columns = ["Support", "Technology", "Capabilities", "Limitations"];
 
         function createLink(label, url) {
             const link = document.createElement("a");
@@ -128,6 +167,7 @@
 
         function createRow(system) {
             const row = document.createElement("tr");
+
             const name = document.createElement("th");
             name.scope = "row";
             name.textContent = system.Name;
@@ -142,31 +182,37 @@
             const example = row.insertCell();
             example.append(createLink(system.Examples.label, system.Examples.url));
             addSource(example, system, "Examples");
+
             return row;
         }
 
         async function loadComparison() {
             const status = document.getElementById("cms-status");
+            status.textContent = "Loading the CMS comparison…";
 
             try {
                 const response = await fetch("./cms-review.json");
+
                 if (!response.ok) {
                     throw new Error(`HTTP ${response.status}`);
                 }
 
                 const systems = await response.json();
                 const rows = systems.map(createRow);
+
                 document.getElementById("cms-rows").replaceChildren(...rows);
                 document.getElementById("table-wrap").hidden = false;
                 status.textContent = "";
             } catch (error) {
                 status.textContent =
                     "The comparison could not load. Check that cms-review.json " +
-                    "is in the same folder and open this page through a web server.";
+                    "contains valid JSON, is in the same folder, and that you " +
+                    "opened this page through a web server.";
                 console.error("Could not load CMS comparison:", error);
             }
         }
 
-        loadComparison();</script>
+        loadComparison();
+    </script>
 </body>
 </html>
